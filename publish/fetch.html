@@ -7,14 +7,18 @@
 <div id="aca-credentials-true"></div>
 <a href="/.netlify/functions/set-cookie">set cookie</a>
 <script>
-    fetch('aca/aca-credentials-false.json', {
+    fetch('/.netlify/functions/aca-credentials-false', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors',
         credentials: 'include'
     })
         .then((response) => response.json())
         .then((data) => document.getElementById('aca-credentials-false').innerHTML = JSON.stringify(data));
 
-    fetch('aca/aca-credentials-true.json', {
-        credentials: 'include'
+    fetch('/.netlify/functions/aca-credentials-true', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors',
+        credentials: 'same-origin'
     })
         .then((response) => response.json())
         .then((data) => document.getElementById('aca-credentials-true').innerHTML = JSON.stringify(data))

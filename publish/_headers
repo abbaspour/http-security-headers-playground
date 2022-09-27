@@ -13,8 +13,14 @@
   X-Frame-Options: SAMEORIGIN
 
 # ACA
-/aca/aca-credentials-false.json
+/.netlify/functions/aca-credentials-false
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: *
+  Access-Control-Allow-Methods: POST
   Access-Control-Allow-Credentials: false
 
-/aca/aca-credentials-true.json
+/.netlify/functions/aca-credentials-true
+  Access-Control-Allow-Origin: http://www.abbaspour.life
+  Access-Control-Allow-Headers: *
+  Access-Control-Allow-Methods: POST
   Access-Control-Allow-Credentials: true
