@@ -1,0 +1,3 @@
+# XFO
+/xfo/deny.html
+  X-Frame-Options: DENY
