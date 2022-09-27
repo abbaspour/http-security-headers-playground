@@ -27,4 +27,4 @@
 
 # Clear-Site-Data
 /logout.html
-  Clear-Site-Data: cookies
+  Clear-Site-Data: "cookies"
