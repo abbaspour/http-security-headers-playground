@@ -1,7 +1,7 @@
 [build]
     publish = "publish/"
 
-#[[redirects]]
-#from = "/*"
-#to = "/index.html"
-#status = 200
+[dev]
+    [dev.https]
+        certFile = "localhost-cert.pem"
+        keyFile = "localhost-private.pem"

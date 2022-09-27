@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
     const hour = 3600000
     const twoWeeks = 14 * 24 * hour
     const myCookie = cookie.serialize('my_cookie', 'lolHi', {
-        secure: false,
+        secure: true,
         httpOnly: true,
         path: '/',
         maxAge: twoWeeks,

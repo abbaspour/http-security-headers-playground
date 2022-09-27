@@ -24,3 +24,7 @@
   Access-Control-Allow-Headers: *
   Access-Control-Allow-Methods: POST
   Access-Control-Allow-Credentials: true
+
+# Clear-Site-Data
+/logout.html
+  Clear-Site-Data: cookies
