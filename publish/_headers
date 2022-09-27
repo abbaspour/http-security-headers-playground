@@ -1,3 +1,7 @@
+# All
+/*
+  Cache-Control: no-cache
+
 # XFO
 /xfo/deny.html
   X-Frame-Options: DENY

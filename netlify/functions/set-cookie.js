@@ -4,28 +4,20 @@ exports.handler = async (event, context) => {
     const hour = 3600000
     const twoWeeks = 14 * 24 * hour
     const myCookie = cookie.serialize('my_cookie', 'lolHi', {
-        secure: true,
+        secure: false,
         httpOnly: true,
         path: '/',
         maxAge: twoWeeks,
     })
-    const redirectUrl = 'http://www.abbaspour.life'
-    // Do redirects via html
     const html = `
   <html lang="en">
     <head>
+      <title>cookie result</title>
       <meta charset="utf-8">
     </head>
     <body>
-      <noscript>
-        <meta http-equiv="refresh" content="0; url=${redirectUrl}" />
-      </noscript>
+    cookie returned. click <a href="/">here</a> to return to website. 
     </body>
-    <script>
-      setTimeout(function() {
-        window.location.href = ${JSON.stringify(redirectUrl)}
-      }, 0)
-    </script>
   </html>`
 
     return {
