@@ -3,16 +3,14 @@ resource "cloudflare_zone" "demo_zone" {
   zone = var.demo_domain
 }
 
-/*
 # add CNAME record for app owner origin
-resource "cloudflare_record" "demo_app_demo" {
+resource "cloudflare_record" "www" {
   zone_id = cloudflare_zone.demo_zone.id
   type    = "CNAME"
-  name    = "api"
-  value   = var.fpset_owner_app_origin
+  name    = "www"
+  value   = "http-security-headers.netlify.app"
   ttl     = 60
 }
-*/
 
 
 # set worker to proxy auth0 routes

@@ -1,0 +1,5 @@
+cloudflare_email = "some@email.address"
+cloudflare_api_key = "XXXX"
+cloudflare_account_id = "XXX"
+
+demo_domain = "my-playground.site"
