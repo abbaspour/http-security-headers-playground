@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <title>ACA sample</title>
+</head>
+<body>
+<div id="aca-credentials-false"></div>
+<div id="aca-credentials-true"></div>
+<script>
+    fetch('aca/aca-credentials-false.json', {
+        credentials: 'include'
+    })
+        .then((response) => response.json())
+        .then((data) => document.getElementById('aca-credentials-false').innerHTML = JSON.stringify(data));
+
+    fetch('aca/aca-credentials-true.json', {
+        credentials: 'include'
+    })
+        .then((response) => response.json())
+        .then((data) => document.getElementById('aca-credentials-true').innerHTML = JSON.stringify(data))
+</script>
+</body>
+</html>

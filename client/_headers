@@ -4,3 +4,10 @@
 
 /xfo/sameorigin.html
   X-Frame-Options: SAMEORIGIN
+
+# ACA
+/aca/aca-credentials-false.json
+  Access-Control-Allow-Credentials: false
+
+/aca/aca-credentials-true.json
+  Access-Control-Allow-Credentials: true
