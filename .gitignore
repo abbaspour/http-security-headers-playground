@@ -4,3 +4,6 @@ terraform.auto.tfvars
 terraform.tfstate
 terraform.tfstate.backup
 *.plan
+
+# Local Netlify folder
+.netlify
