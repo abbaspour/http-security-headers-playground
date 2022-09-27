@@ -1,3 +1,6 @@
 # XFO
 /xfo/deny.html
   X-Frame-Options: DENY
+
+/xfo/sameorigin.html
+  X-Frame-Options: SAMEORIGIN
