@@ -13,7 +13,7 @@ command -v openssl >/dev/null || { echo >&2 "error: openssl not found";  exit 3;
 function usage() {
     cat <<END >&2
 USAGE: $0 [-n domain]
-        -n name     # name of key pair (default is localhost)
+        -n name     # name of key pair (default is localtest.me)
         -h|?        # usage
         -v          # verbose
 
@@ -23,7 +23,7 @@ END
     exit $1
 }
 
-declare pair_name='localhost'
+declare pair_name='localtest.me'
 
 while getopts "n:hv?" opt; do
     case ${opt} in
@@ -47,7 +47,7 @@ cat >openssl.cnf <<-EOF
   prompt = no
   default_bits            = 2048
   [req_distinguished_name]
-  CN = ${pair_name}
+  CN = *.${pair_name}
   [v3_req]
   keyUsage = nonRepudiation, digitalSignature, keyEncipherment, dataEncipherment
   extendedKeyUsage = serverAuth

@@ -10,7 +10,6 @@
       <li>Man in the Middle (MITM)
         <ul>
           <li><a href="hsts.html"> HTTP <code>Strict Transport Security</code></a> (HSTS)</li>
-          <li><code>Secure</code> Cookies</li>
           <li>Deprecated
             <ul>
               <li>Certificate Transparency (Expect-CT)</li>
@@ -29,7 +28,6 @@
             </ul>
           </li>
           <li><a href="csp.html"> Content Security Policy</a> (CSP)</li>
-          <li><code>HttpOnly</code> Cookies</li>
           <li>Deprecated
             <ul>
               <li><code>X-XSS-Protection</code></li>
@@ -41,9 +39,27 @@
         <ul>
           <li>Cross Origin Resource Sharing (CORS)
             <ul>
-            <li><a href="fetch.html"><code>Access-Control-Allow-*</code> family</a></li>
+            <li><a href="cross-origin.html"><code>Access-Control-Allow-*</code> family</a></li>
             </ul>
           </li>
+        </ul>
+      </li><!-- /CSRF -->
+      <li>Privacy violation
+          <ul>
+            <li><code>Referrer-Policy</code></a>
+              <ul>
+                <li><a href="referrer-policy/no-referrer.html"><code>no-referrer</code></a></li>
+                <li><a href="referrer-policy/no-referrer-when-downgrade.html"><code>no-referrer-when-downgrade</code></a></li>
+              </ul>
+
+            </li>
+            <li>Multimedia features (<code>Feature-Policy</code>)</li>
+          </ul>
+      </li><!-- /Privacy -->
+      <li>Cookie security
+        <ul>
+          <li>Secure</li>
+          <li>HttpOnly</li>
           <li><code>SameSite</code> Cookies
             <ul>
               <li><code>Strict</code></li>
@@ -52,13 +68,7 @@
             </ul>
           </li>
         </ul>
-      </li><!-- /CSRF -->
-      <li>Privacy violation
-          <ul>
-            <li>Referrer tracking (<code>Referrer-Policy</code>)</li>
-            <li>Multimedia features (<code>Feature-Policy</code>)</li>
-          </ul>
-      </li><!-- /Privacy -->
+      </li><!-- /Cookie -->
       <li>Offline data access
         <ul>
           <li><code>Cache-Control</code></li>

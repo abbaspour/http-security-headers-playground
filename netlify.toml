@@ -3,5 +3,5 @@
 
 [dev]
     [dev.https]
-        certFile = "localhost-cert.pem"
-        keyFile = "localhost-private.pem"
+        certFile = "localtest.me-cert.pem"
+        keyFile = "localtest.me-private.pem"

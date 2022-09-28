@@ -6,22 +6,33 @@
 <div id="aca-credentials-false"></div>
 <div id="aca-credentials-true"></div>
 <a href="/.netlify/functions/set-cookie">set cookie</a>
+<a href="preflight.html">preflight flowchart</a>
 <script>
-    fetch('/.netlify/functions/aca-credentials-false', {
+    const {origin} = window.location
+    const api = origin.replace(/:\/\/www\./, '://api.');
+
+    fetch(`${api}/.netlify/functions/aca-credentials-true`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'no-cors',
-        credentials: 'include'
+        //mode: 'no-cors',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
         .then((response) => response.json())
         .then((data) => document.getElementById('aca-credentials-false').innerHTML = JSON.stringify(data));
-
-    fetch('/.netlify/functions/aca-credentials-true', {
+    /*
+    fetch(`${api}/.netlify/functions/aca-credentials-true`, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',
-        credentials: 'same-origin'
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
         .then((response) => response.json())
         .then((data) => document.getElementById('aca-credentials-true').innerHTML = JSON.stringify(data))
+     */
 </script>
 </body>
 </html>

@@ -20,9 +20,9 @@
   Access-Control-Allow-Credentials: false
 
 /.netlify/functions/aca-credentials-true
-  Access-Control-Allow-Origin: http://www.abbaspour.life
-  Access-Control-Allow-Headers: *
-  Access-Control-Allow-Methods: POST
+  Access-Control-Allow-Origin: https://www.localtest.me:8888
+  Access-Control-Allow-Headers: content-type
+  Access-Control-Allow-Methods: *
   Access-Control-Allow-Credentials: true
 
 # Clear-Site-Data
@@ -41,3 +41,10 @@
 /csp.html
   Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src *.abbaspour.life
 
+# Referrer-Policy
+/referrer-policy/no-referrer.html
+  Referrer-Policy: no-referrer
+
+/referrer-policy/no-referrer-when-downgrade.html
+  Referrer-Policy: no-referrer-when-downgrade
+  Upgrade-Insecure-Requests: 0
