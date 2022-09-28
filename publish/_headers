@@ -28,3 +28,7 @@
 # Clear-Site-Data
 /logout.html
   Clear-Site-Data: "cookies"
+
+# HSTS
+/hsts.html
+  Strict-Transport-Security: max-age=60
