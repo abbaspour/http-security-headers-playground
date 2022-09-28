@@ -32,3 +32,8 @@
 # HSTS
 /hsts.html
   Strict-Transport-Security: max-age=60
+
+# nosniff
+/nosniff.html
+  X-Content-Type-Options: nosniff
+
