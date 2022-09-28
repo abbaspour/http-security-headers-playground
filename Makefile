@@ -1,3 +1,3 @@
 
 dev:
-	netlify dev
+	BROWSER=none netlify dev

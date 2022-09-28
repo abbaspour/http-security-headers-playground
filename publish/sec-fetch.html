@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <title>sec-fetch-* sample</title>
+</head>
+<body>
+<iframe src="/.netlify/functions/sec-fetch" title="iFrame fetch"></iframe>
+<div id="xhr-fetch"></div>
+<script>
+    const {origin} = window.location
+    const api = origin.replace(/:\/\/www\./, '://api.');
+
+    fetch(`/.netlify/functions/sec-fetch`, {
+    })
+        .then((response) => response.text())
+        .then((data) => document.getElementById('xhr-fetch').innerHTML = data);
+</script>
+
+</body>
+</html>

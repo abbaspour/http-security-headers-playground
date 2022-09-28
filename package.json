@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/abbaspour/http-security-headers-playground.git"
   },
-  "author": "",
+  "author": "Amin Abbaspour <amin.abbaspour@okta.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/abbaspour/http-security-headers-playground/issues"
