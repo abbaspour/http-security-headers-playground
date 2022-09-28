@@ -37,3 +37,7 @@
 /nosniff.html
   X-Content-Type-Options: nosniff
 
+# CSP
+/csp.html
+  Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src *.abbaspour.life
+
