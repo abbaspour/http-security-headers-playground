@@ -7,10 +7,7 @@
 <div id="xhr-fetch"></div>
 <script>
     const {origin} = window.location
-    const api = origin.replace(/:\/\/www\./, '://api.');
-
-    fetch(`/.netlify/functions/sec-fetch`, {
-    })
+    fetch(`/.netlify/functions/sec-fetch`, {})
         .then((response) => response.text())
         .then((data) => document.getElementById('xhr-fetch').innerHTML = data);
 </script>

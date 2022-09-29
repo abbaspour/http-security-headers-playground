@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <title>Cookie sample</title>
+</head>
+<body>
+Click <a href="/.netlify/functions/set-cookie">here</a> to write cookies.
+<ul>
+    <li><code>Secure</code></li>
+    <li><code>HttpOnly</code></li>
+    <li><code>SameSite</code>
+        <ul>
+            <li><code>Strict</code></li>
+            <li><code>LAX</code></li>
+            <li><code>None</code></li>
+        </ul>
+    </li>
+</ul>
+<div id="clientCookies"></div>
+<script>
+    document.getElementById("clientCookies").innerText = document.cookie;
+</script>
+</body>
+</html>
