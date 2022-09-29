@@ -48,3 +48,7 @@
 /referrer-policy/no-referrer-when-downgrade.html
   Referrer-Policy: no-referrer-when-downgrade
   Upgrade-Insecure-Requests: 0
+
+# Permissions-Policy
+/permissions-policy/camera.html
+  Feature-Policy: camera 'none';
