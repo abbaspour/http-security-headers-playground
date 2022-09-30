@@ -24,8 +24,10 @@ exports.handler = async (event, context) => {
         },
         'multiValueHeaders': {
             'Set-Cookie': [
-                'clientSide=clientSide; Max-Age=3600; SameSite=none; Secure; Domain=' + domain,
-                'sameSiteLax_httpOnly=sameSiteLax_httpOnly; Max-Age=3600; HttpOnly; SameSite=lax; Secure; Domain=' + domain,
+                'clientSide=clientSide; Max-Age=3600; SameSite=none; Secure; Path=/; Domain=' + domain,
+                'sameSite_none=None; Max-Age=3600; HttpOnly; SameSite=none; Secure; Path=/; Domain=' + domain,
+                'sameSite_lax=LAX; Max-Age=3600; HttpOnly; SameSite=lax; Secure; Path=/; Domain=' + domain,
+                'sameSite_strict=Strict; Max-Age=3600; HttpOnly; SameSite=strict; Secure; Path=/; Domain=' + domain,
             ],
         },
         'body': html

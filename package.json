@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/abbaspour/http-security-headers-playground#readme",
   "dependencies": {
-    "cookie": "^0.5.0"
+    "canvas": "^2.10.1"
   }
 }
