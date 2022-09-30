@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>referrer-policy Demo</title>
 </head>
 <body>
-<ul>
-    <li><a href="no-referrer.html"><code>no-referrer</code></a></li>
-    <li><a href="no-referrer-when-downgrade.html"><code>no-referrer-when-downgrade</code></a></li>
-</ul>
-
+<table border="1">
+    <tr>
+        <td><a href="no-referrer.html?user=abc"><code>no-referrer</code></a></td>
+        <td>
+            The <code>Referer</code> header will be omitted: sent requests do not include any referrer information.
+        </td>
+    </tr>
+    <tr>
+        <td><a href="no-referrer-when-downgrade.html?user=abc"><code>no-referrer-when-downgrade</code></a></td>
+        <td>Send the origin, path, and querystring in Referer when the protocol security level stays the same or
+            improves (HTTP→HTTP, HTTP→HTTPS, HTTPS→HTTPS).
+            Don't send the Referer header for requests to less secure destinations (HTTPS→HTTP, HTTPS→file).
+        </td>
+    </tr>
+    <tr>
+        <td><a href="origin.html?user=abc"><code>origin</code></a></td>
+        <td>Send only the origin in the Referer header. For example, a document at https://example.com/page.html will
+            send the referrer https://example.com/.
+        </td>
+    </tr>
+    <tr>
+        <td><a href="origin-when-cross-origin.html?user=abc"><code>origin-when-cross-origin</code></a></td>
+        <td>When performing a same-origin request to the same protocol level (HTTP→HTTP, HTTPS→HTTPS), send the origin,
+            path, and query string. Send only the origin for cross origin requests and requests to less secure
+            destinations (HTTPS→HTTP).
+        </td>
+    </tr>
+    <tr>
+        <td><a href="same-origin.html?user=abc"><code>same-origin</code></a></td>
+        <td>Send the origin, path, and query string for same-origin requests. Don't send the Referer header for
+            cross-origin requests.
+        </td>
+    </tr>
+    <tr>
+        <td><a href="strict-origin.html?user=abc"><code>strict-origin</code></a></td>
+        <td>Send only the origin when the protocol security level stays the same (HTTPS→HTTPS). Don't send the Referer
+            header to less secure destinations (HTTPS→HTTP).
+        </td>
+    </tr>
+    <tr>
+        <td><a href="strict-origin-when-cross-origin.html?user=abc"><code>strict-origin-when-cross-origin</code></a>
+        </td>
+        <td>Send the origin, path, and querystring when performing a same-origin request. For cross-origin requests send
+            the origin (only) when the protocol security level stays same (HTTPS→HTTPS). Don't send the Referer header
+            to less secure destinations (HTTPS→HTTP).
+        </td>
+    </tr>
+    <tr>
+        <td><a href="unsafe-url.html?user=abc"><code>unsafe-url</code></a></td>
+        <td>Send the origin, path, and query string when performing any request, regardless of security.</td>
+    </tr>
+</table>
 </body>
