@@ -4,6 +4,7 @@ exports.handler = async (event, context) => {
     domain = domain.replace(/:\d*$/, '');
     console.log(`host: ${host}`);
     console.log(`domain: ${domain}`);
+
     const html = `
   <html lang="en">
     <head>

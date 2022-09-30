@@ -7,9 +7,13 @@
   <body>
     <h3>Attacks types and protection headers</h3>
     <ul>
-      <li>Cross Site scripting (XSS)
+      <li>Clickjacking Attacks
         <ul>
           <li><a href="xfo/index.html"><code>X-Frame-Options</code></a></li>
+        </ul>
+      </li> <!-- Clickjacking -->
+      <li>Cross Site scripting (XSS)
+        <ul>
           <li><a href="nosniff.html"><code>X-Content-Type-Options</code></a>
           <!--<li><code>Content-Disposition</code></li>-->
           </li>
@@ -17,6 +21,7 @@
           <li>Deprecated
             <ul>
               <li><code>X-XSS-Protection</code></li>
+              <li><code>X-Download-Options</code></li>
             </ul>
           </li>
         </ul>
@@ -39,6 +44,7 @@
       <li>Man in the Middle (MITM)
         <ul>
           <li><a href="hsts.html"><code>Strict-Transport-Security</code></a> (HSTS)</li>
+          <li>CSP <code>upgrade-insecure-requests</code></li>
           <li>Certificate Transparency</li>
           <li>Deprecated
             <ul>
