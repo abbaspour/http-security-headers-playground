@@ -19,12 +19,14 @@ exports.handler = async (event, context) => {
     return {
         'statusCode': 200,
         'headers': {
+            'Cache-Control': 'no-cache',
+            'Content-Type': 'text/html',
+        },
+        'multiValueHeaders': {
             'Set-Cookie': [
                 'clientSide=clientSide; Max-Age=3600; SameSite=none; Secure; Domain=' + domain,
                 'sameSiteLax_httpOnly=sameSiteLax_httpOnly; Max-Age=3600; HttpOnly; SameSite=lax; Secure; Domain=' + domain,
             ],
-            'Cache-Control': 'no-cache',
-            'Content-Type': 'text/html',
         },
         'body': html
     }
