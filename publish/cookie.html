@@ -19,8 +19,19 @@ Click <a href="/.netlify/functions/set-cookie">here</a> to write cookies.
 <script>
     document.getElementById("clientCookies").innerText = document.cookie;
 </script>
-<img src="/.netlify/functions/cookie-img" alt="same origin cookies over img tag"/>
-<img src="https://api.localtest.me:8888/.netlify/functions/cookie-img" alt="same site cross origin cookies over img tag "/>
-<img src="https://www.abbaspour.life/.netlify/functions/cookie-img" alt="different site cross origin cookies over img tag "/>
+<a href="https://www.abbaspour.life/.netlify/functions/cookie-img">images with redirect</a>
+<table border="1">
+    <tr><td>
+        <img height="240px" width="180px" src="/.netlify/functions/cookie-img" alt="same origin cookies over img tag"/>
+    </td></tr>
+    <tr><td>
+    <img src="https://api.localtest.me:8888/.netlify/functions/cookie-img"
+         alt="same site cross origin cookies over img tag "/>
+    </td></tr>
+    <tr><td>
+    <img src="https://www.abbaspour.life/.netlify/functions/cookie-img"
+         alt="different site cross origin cookies over img tag "/>
+    </td></tr>
+</table>
 </body>
 </html>
