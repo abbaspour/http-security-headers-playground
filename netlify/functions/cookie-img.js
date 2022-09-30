@@ -1,24 +1,33 @@
-const { createCanvas } = require('canvas');
-
 exports.handler = async (event, context) => {
 
     console.log(event);
-    const { cookie } = event.headers;
-    const cookies = cookie.replace(/; /g, '\n');
+    const { cookie = ''} = event.headers;
+    const cookies = cookie.split(';');
 
-    const canvas = createCanvas(400, 200);
-    const ctx = canvas.getContext('2d');
+    console.log(cookies);
+    let text = '';
 
-    ctx.font = '16px Impact';
-    ctx.fillText(cookies, 20, 20);
+    for(const [i, c] of cookies.entries()) {
+        console.log(i, c);
+        text += `<text x="10" y="${(i+1) * 10}" class="heavy">${c}</text>`;
+    }
+
+    console.log(text);
+    const svg = `<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .heavy {
+        font: bold 8px monospaced;
+        }
+    </style>
+    ${text}
+</svg>`;
 
     return {
         'statusCode': 200,
-        isBase64Encoded: true,
         'headers': {
             'Cache-Control': 'no-cache',
-            'Content-Type': 'image/png',
+            'Content-Type': 'image/svg+xml',
         },
-        body: canvas.toDataURL().replace('data:image/png;base64', '')
+        body: svg
     }
 }

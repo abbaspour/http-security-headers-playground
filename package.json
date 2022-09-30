@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/abbaspour/http-security-headers-playground#readme",
   "dependencies": {
-    "canvas": "^2.10.1"
   }
 }
