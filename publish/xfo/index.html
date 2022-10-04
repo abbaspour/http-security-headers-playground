@@ -1,9 +1,52 @@
 <html lang="en">
 <head>
     <title>XFO sample</title>
-</head>
+    <style>
+        .iframe {
+            border: 0;
+            width: 400px;
+            height: 400px;
+        }
+        .overlay {
+            width: 400px;
+            height: 400px;
+            background: beige;
+        }
+        .overlay-attack {
+            pointer-events: none;
+            width: 400px;
+            height: 400px;
+            background: beige;
+            position: absolute;
+            z-index: 400;
+            top: 420px;
+            left: 15px;
+
+        }
+    </style></head>
 <body>
-<iframe src="deny.html" title="iFrame with XFO DENY"></iframe>
-<iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN"></iframe>
+<table border="1">
+    <tr>
+        <td>
+            <iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe>
+        </td>
+        <td>
+            <div class="overlay">
+                <button>safe</button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe>
+            <div class="overlay-attack">
+                <button>safe</button>
+            </div>
+        </td>
+        <td>
+            <iframe src="deny.html" title="iFrame with XFO DENY" class="iframe"></iframe>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
