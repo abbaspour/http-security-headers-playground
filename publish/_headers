@@ -33,8 +33,17 @@
 /hsts.html
   Strict-Transport-Security: max-age=60
 
-# nosniff
+#  X-Content-Type-Options
 /nosniff.html
+  X-Content-Type-Options: nosniff
+
+/xcto/style.css
+  Content-Type: text/plain
+  Cache-Control: private
+
+/xcto/style-nosniff.css
+  Content-Type: text/plain
+  Cache-Control: private
   X-Content-Type-Options: nosniff
 
 # CSP

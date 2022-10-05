@@ -1,0 +1,3 @@
+var div = document.getElementById('js_css');
+div.innerHTML = 'Hi, I am a script from <em>text/css</em>';
+div.style.color = 'green';
