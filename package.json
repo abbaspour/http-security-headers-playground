@@ -1,11 +1,8 @@
 {
   "name": "http-security-headers-playground",
   "version": "1.0.0",
-  "description": "A super simple demo/playground to showcase different HTTP security headers in action.",
+  "description": "A super simple playground to showcase different HTTP security headers in action.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abbaspour/http-security-headers-playground.git"
@@ -15,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/abbaspour/http-security-headers-playground/issues"
   },
-  "homepage": "https://github.com/abbaspour/http-security-headers-playground#readme",
+  "homepage": "https://www.httpsecurityheaders.dev",
   "dependencies": {
   }
 }

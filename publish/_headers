@@ -48,7 +48,7 @@
 
 # CSP
 /csp.html
-  Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src *.abbaspour.life
+  Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src *.httpsecurityheaders.dev
 
 # Referrer-Policy
 /referrer-policy/no-referrer.html
