@@ -1,0 +1,11 @@
+body {
+    background-color: mintcream;
+}
+li {
+    margin-bottom: 8px;
+}
+
+caption {
+    padding: 10px;
+    caption-side: bottom;
+}
