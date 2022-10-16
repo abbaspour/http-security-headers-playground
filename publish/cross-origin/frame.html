@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <title>ACA frame sample</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <button id="call-co-safe-api" onclick="callAPI('.netlify/functions/aca-origin-restricted', 'safe-result')">
+                safe api
+            </button>
+        </td>
+        <td>
+            <div id="safe-result"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="call-co-unsafe-api"
+                    onclick="callAPI('.netlify/functions/aca-origin-unrestricted', 'unsafe-result')">unsafe api
+            </button>
+        </td>
+        <td>
+            <div id="unsafe-result"></div>
+        </td>
+    </tr>
+</table>
+<script>
+    const {origin} = window.location
+    const api = origin.replace(/:\/\/[^.]+\./, '://api.');
+
+    function callAPI(path, id) {
+        fetch(`${api}/${path}`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(async response => {
+            const isJson = response.headers.get('content-type')?.includes('application/json');
+            const data = isJson ? await response.json() : null;
+
+            if (!response.ok) {
+                document.getElementById(id).innerHTML = (data && data.message) || response.status;
+            } else
+                document.getElementById(id).innerHTML = JSON.stringify(data);
+        })
+            .catch(error => {
+                document.getElementById(id).innerHTML = `Error: ${error}`;
+            });
+
+    }
+
+</script>
+</body>
+</html>

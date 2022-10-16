@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <title>ACA sample</title>
+</head>
+<body>
+<div id="ref-link"></div>
+<table>
+    <tr>
+        <td>
+            <div id="www"></div>
+        </td>
+        <td>
+            <div id="fake"></div>
+        </td>
+    </tr>
+</table>
+<script>
+    const {origin} = window.location
+    const api = origin.replace(/:\/\/www\./, '://api.');
+    const fake = origin.replace(/:\/\/www\./, '://fake.');
+    document.getElementById('ref-link').innerHTML = `<a href="${api}/.netlify/functions/aca-origin-restricted">link</a>`;
+
+    document.getElementById('www').innerHTML = `<iframe src="frame.html"></iframe>`;
+    document.getElementById('fake').innerHTML = `<iframe src="${fake}/cross-origin/frame.html"></iframe>`;
+</script>
+</body>
+</html>
