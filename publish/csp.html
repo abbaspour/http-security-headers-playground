@@ -1,11 +1,36 @@
 <html lang="en">
 <head>
     <title>CSP sample</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-Setting <code>Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src *.httpsecurityheaders.dev</code>
+<script>
+    function loadSelfImage() {
+        document.getElementById('self-img').innerHTML = '<img src="img/okta-blue.png" alt="local okta blue"/>';
+    }
+    function loadRemoteImage() {
+        document.getElementById('remote-img').innerHTML = '<img src="https://www.okta.com/sites/default/files/media/image/2021-03/Logo_Okta_Blue_RGB.png" alt="remote okta blue"/>';
+    }
+</script>
 <hr/>
-<img src="img/okta-blue.png" alt="local okta blue"/>
-<img src="https://www.okta.com/sites/default/files/Okta_Logo_White_Medium-thumbnail.png" alt="remote okta white"/>
+<table style="width: 50%">
+    <tr style="text-align: center;">
+        <td>
+            <button onclick="loadSelfImage();">load self image</button>
+        </td>
+        <td>
+            <button onclick="loadRemoteImage();">load remote image</button>
+        </td>
+    </tr>
+    <tr style="alignment: center">
+        <td>
+           <div id="self-img"></div>
+        </td>
+        <td>
+            <div id="remote-img"></div>
+        </td>
+    </tr>
+</table>
+<hr/>
 </body>
 </html>
