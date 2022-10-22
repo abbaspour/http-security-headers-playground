@@ -23,10 +23,8 @@
             background: beige;
             position: absolute;
             z-index: 2;
-            top: 230px;
-            left: 820px;
-            opacity: 100%;
-
+            top: 148px;
+            left: 815px;
         }
     </style></head>
 <body>
@@ -36,6 +34,7 @@
     }
 
     function loadOverlay() {
+        window.document.getElementById('overlay').innerHTML = '<button>safe</button>';
         window.document.getElementById('overlay').classList.add('overlay');
 
     }
@@ -43,11 +42,15 @@
     function loadOverlayOverIframe() {
         window.document.getElementById('overlay-attack').innerHTML = '<iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe><div class="overlay-attack"><button>safe</button></button></div>"'
         //window.document.getElementById('overlay').classList.add('overlay');
-
     }
+
+    function loadDenyIframe() {
+        window.document.getElementById('safe-iframe').innerHTML = '<iframe src="deny.html" title="iFrame with XFO DENY" class="iframe"></iframe>'
+    }
+
 </script>
 
-<table border="1">
+<table border="1" style="width: 50%">
     <caption><code>X-Frame-Options</code> Header</caption>
     <thead>
         <tr><td>Value</td><td>Description</td></tr>
@@ -61,39 +64,35 @@
     </tr>
 </tbody>
 </table>
-<ol>
-    <li><button onclick="loadSameOriginIframe()">unsafe iframe</button></li>
-    <li><button onclick="loadOverlay()">overlay</button></li>
-    <li><button onclick="loadOverlayOverIframe()">overlay over iframe</button></li>
-</ol>
-<table cellpadding="0">
-    <tr>
-        <td>
+<table style="width: 1200px; padding: 1px;">
+    <tr style="height: 400px">
+        <td style="width: 400px">
             <div id="unsafe-iframe"></div>
         </td>
-        <td>
-            <div id="overlay">
-                &nbsp;<button>safe</button>
-                <copde>
-                    <pre>
-.overlay {
-    width: 400px;
-    height: 400px;
-    background: beige;
-    pointer-events: none;
-}
-                        </pre>
-                </copde>
-            </div>
+        <td style="width: 400px">
+            <div id="overlay"></div>
         </td>
-        <td>
+        <td style="width: 400px">
             <div id="overlay-attack"></div>
         </td>
     </tr>
+    <tr style="text-align: center">
+        <td><button onclick="loadSameOriginIframe()">unsafe iframe</button></td>
+        <td><button onclick="loadOverlay()">overlay</button></td>
+        <td><button onclick="loadOverlayOverIframe()">overlay over iframe</button></td>
+    </tr>
 </table>
 <hr/>
-<iframe src="deny.html" title="iFrame with XFO DENY" class="iframe"></iframe>
-
+<table style="width: 400px">
+    <tr style="height: 400px">
+        <td>
+            <div id="safe-iframe"></div>
+        </td>
+    </tr>
+    <tr style="text-align: center">
+        <td><button onclick="loadDenyIframe()">safe iframe</button></td>
+    </tr>
+</table>
 </body>
 
 </html>
