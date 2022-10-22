@@ -1,7 +1,27 @@
-<!DOCTYPE HTML>
-JS executed from text/plain: <span id='js_css'><font color='gray'>??</font></span>
+<html lang="en">
+<head>
+    <title>XCTO sample</title>
+    <link href="/style.css" rel="stylesheet"/>
+</head>
+<body>
+<script>
+    function loadUnsafeCss() {
+        const s = document.createElement('script');
+        s.src = "/xcto/style.css";
+        document.body.appendChild(s);
+    }
+    function loadSafeCss() {
+        const s = document.createElement('script');
+        s.src = "/xcto/style-nosniff.css";
+        document.body.appendChild(s);
+    }
+</script>
+<button onclick="loadUnsafeCss();">load unsafe CSS</button>
 <br/>
-JS executed from text/plain (nosniff): <span id='js_css_nosniff'><font color='gray'>??</font></span>
-<script src="/xcto/style.css"></script>
-<script src="/xcto/style-nosniff.css"></script>
+<button onclick="loadSafeCss();">load safe CSS</button>
+<hr/>
+JS executed from text/css: <span id='js_css' style="color: gray">??</span>
+<br/>
+JS executed from text/css (nosniff): <span id='js_css_nosniff' style="color: gray">??</span>
+</body>
 
