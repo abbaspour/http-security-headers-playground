@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
     console.log(event);
     const {httpMethod, headers} = event;
-    const {origin} = headers || '';
+    const {origin = '*'} = headers;
 
     if (httpMethod === 'OPTIONS') {
         if (origin.startsWith('https://www.'))
@@ -28,9 +28,6 @@ exports.handler = async (event, context) => {
             "Access-Control-Allow-Max-Age": 0,
             "content-type": 'application/json'
         },
-        body: JSON.stringify({
-            message: `hello ${origin}`,
-            httpMethod,
-        })
+        body: JSON.stringify({origin})
     }
 }
