@@ -1,9 +1,14 @@
 <html lang="en">
 <head>
     <title>Referrer-Policy origin-when-cross-origin</title>
+    <script src="rp.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<img src="/.netlify/functions/cookie-img?name=referer" alt="origin-when-cross-origin HTTPS headers"/>
-<iframe src="https://httpbin.org/headers">origin-when-cross-origin cross-origin HTTPS headers</iframe>
+<button onclick="refererImg()">show referer header</button>
+<div id="referer-img"></div>
+<hr/>
+<button onclick="refererImg(true, 'co-referer-img')">show CO referer header</button>
+<div id="co-referer-img" style="width: 80%; height: 10%"></div>
 </body>
 </html>

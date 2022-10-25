@@ -14,10 +14,10 @@ exports.handler = async (event, context) => {
     }
 
     console.log(text);
-    const svg = `<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+    const svg = `<svg width="600px" height="50px" xmlns="http://www.w3.org/2000/svg">
     <style>
         .heavy {
-        font: bold 8px monospaced;
+        font: bold 14px monospaced;
         }
     </style>
     ${text}
@@ -26,7 +26,7 @@ exports.handler = async (event, context) => {
     return {
         'statusCode': 200,
         'headers': {
-            'Cache-Control': 'no-cache',
+            'Cache-Control': 'private',
             'Content-Type': 'image/svg+xml',
         },
         body: svg

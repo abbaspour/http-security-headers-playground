@@ -1,8 +1,12 @@
 <html lang="en">
 <head>
     <title>Referrer-Policy no-referrer</title>
+    <script src="rp.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<iframe src="https://httpbin.org/headers">no-referrer headers</iframe>
+<button onclick="refererImg()">show referer header</button>
+<div id="referer-img"></div>
+<!--<iframe src="https://httpbin.org/headers" style="width: 70%; height: 80%">no-referrer headers</iframe>-->
 </body>
 </html>

@@ -1,9 +1,14 @@
 <html lang="en">
 <head>
     <title>Referrer-Policy no-referrer-when-downgrade</title>
+    <script src="rp.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<iframe src="https://httpbin.org/headers">no-referrer-when-downgrade HTTPS headers</iframe>
-<iframe src="http://httpbin.org/headers">no-referrer-when-downgrade HTTP headers</iframe>
+<button onclick="refererImg()">show referer header</button>
+<div id="referer-img"></div>
+<hr/>
+<button onclick="refererImg(false, 'http-referer-img', true)">show downgrade referer header</button>
+<div id="http-referer-img"></div>
 </body>
 </html>
