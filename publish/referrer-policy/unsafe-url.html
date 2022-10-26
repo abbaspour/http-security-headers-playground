@@ -1,9 +1,17 @@
 <html lang="en">
 <head>
     <title>Referrer-Policy unsafe-url</title>
+    <script src="rp.js"></script>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<iframe src="https://httpbin.org/headers">unsafe-url HTTPS headers</iframe>
-<iframe src="http://httpbin.org/headers">unsafe-url HTTP headers</iframe>
+<button onclick="refererImg()">show referer header</button>
+<div id="referer-img"></div>
+<hr/>
+<button onclick="refererImg(false, 'http-referer-img', true)">show downgrade referer header</button>
+<div id="http-referer-img"></div>
+<hr/>
+<button onclick="refererImg(true, 'co-referer-img')">show CO referer header</button>
+<div id="co-referer-img"></div>
 </body>
 </html>
