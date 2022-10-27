@@ -78,6 +78,9 @@
 
 # Permissions-Policy
 /permissions-policy/camera.html
+  Feature-Policy: camera 'self';
+
+/permissions-policy/camera-none.html
   Feature-Policy: camera 'none';
 
 # Expect-CT

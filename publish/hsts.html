@@ -1,13 +1,15 @@
 <html lang="en">
 <head>
     <title>HSTS sample</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
 Setting <code>Strict-Transport-Security:max-age=60</code>
 <ul>
     <li><code>max-age=seconds</code></li>
     <li><code>includeSubDomains</code></li>
-    <li><a href="https://hstspreload.org/"><code>preload</code></a></li>
+    <li>TOFU workaround: <a href="https://hstspreload.org/"><code>preload</code></a></li>
 </ul>
+HTTP access should result in fake 307 <code>Non-Authoritative-Reason: HSTS</code> done by browser HTTPS address.
 </body>
 </html>
