@@ -1,76 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>HTTP Security Headers Demo</title>
     <link href="/style.css" rel="stylesheet"/>
-  </head>
-  <body style="background-color:mintcream;">
-    <h3>Attacks types and protection headers</h3>
-    <ul>
-      <li>Clickjacking
-        <ul>
-          <li><a href="xfo/index.html"><code>X-Frame-Options</code></a></li>
-        </ul>
-      </li> <!-- Clickjacking -->
-      <li>Cross Site Scripting (XSS)
-        <ul>
-          <li><a href="xcto/index.html"><code>X-Content-Type-Options</code></a>
-          <!--<li><code>Content-Disposition</code></li>-->
-          </li>
-          <li><a href="csp.html"> Content Security Policy</a> (CSP)</li>
-          <li>Deprecated
-            <ul>
-              <li><code>X-XSS-Protection</code></li>
-              <li><code>X-Download-Options</code></li>
-            </ul>
-          </li>
-        </ul>
-      </li> <!-- /XSS -->
-      <li>Cross Site Request Forgery (CSRF)
-        <ul>
-          <li>Cross Origin Resource Sharing (CORS)
-            <ul>
-            <li><a href="cross-origin/index.html"><code>Access-Control-Allow-*</code> family</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li><!-- /CSRF -->
-      <li>Privacy violation
-          <ul>
-            <li><a href="referrer-policy/index.html"><code>Referrer-Policy</code></a></li>
-            <li><a href="permissions-policy/index.html"><code>Permissions-Policy</code></a> (aka <code>Feature-Policy</code>)</li>
-          </ul>
-      </li><!-- /Privacy -->
-      <li>Man in the Middle (MITM)
-        <ul>
-          <li><a href="https://www.httpsecurityheaders.dev/hsts.html"><code>Strict-Transport-Security</code></a> (HSTS)</li>
-          <li>CSP <code>upgrade-insecure-requests</code></li>
-          <li>Certificate Transparency</li>
-          <li>Deprecated
-            <ul>
-              <li><a href="expect-ct.html"><code>Expect-CT</code></a></li>
-              <li>HTTP Public Key Pinning (HPKP)</li>
-            </ul>
-          </li>
-        </ul>
-      </li> <!-- /MITM -->
-      <li>Cookie security
-        <ul>
-          <li><a href="cookie.html"><code>Set-Cookie</code></a> </li>
-        </ul>
-      </li><!-- /Cookie -->
-      <li>Offline data access
-        <ul>
-          <li><code>Cache-Control</code></li>
-          <li><a href="logout.html"><code>Clear-Site-Data</code></a></li>
-        </ul>
-      </li><!-- Offline -->
-      <li>Client Headers
-        <ul>
-          <li><a href="sec-fetch.html"><code>Sec-Fetch-*</code></a></li>
-        </ul>
-      </li><!--Client -->
-    </ul>
-  </body>
+</head>
+<body>
+<h3>Attacks types:</h3>
+<ol>
+    <li>
+        <a href="xfo/index.html">Clickjacking</a>
+    </li>
+
+    <li>
+        <a href="xss.html">Cross Site Scripting</a>
+    </li>
+
+    <li>
+        <a href="privacy.html">Privacy violation</a>
+    </li>
+
+    <li>
+        <a href="mitm.html">Man in the Middle</a>
+    </li>
+
+    <li>
+        <a href="cookie.html">Cookies</a>
+    </li>
+
+    <li>
+        <a href="cross-origin/index.html">Cross Origin Resource Sharing</a>
+    </li>
+
+    <li>
+        <a href="offline.html">Offline data access</a>
+    </li>
+
+    <li>
+        <a href="sec-fetch.html">Client Headers</a>
+    </li>
+</ol>
+</body>
 </html>

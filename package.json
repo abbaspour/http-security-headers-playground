@@ -13,6 +13,7 @@
     "url": "https://github.com/abbaspour/http-security-headers-playground/issues"
   },
   "homepage": "https://www.httpsecurityheaders.dev",
-  "dependencies": {
+  "devDependencies": {
+    "netlify-cli": "^12.0.11"
   }
 }

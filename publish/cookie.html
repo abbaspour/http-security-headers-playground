@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
     <title>Cookie sample</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
 Click <a href="/.netlify/functions/set-cookie">here</a> to write cookies.
@@ -15,23 +16,50 @@ Click <a href="/.netlify/functions/set-cookie">here</a> to write cookies.
         </ul>
     </li>
 </ul>
-<div id="clientCookies"></div>
 <script>
-    document.getElementById("clientCookies").innerText = document.cookie;
+    function showClientSideCookie() {
+        document.getElementById("clientCookies").innerText = document.cookie;
+    }
+
+    function showServerSideCookies(divName, co = false, cs = false) {
+        let prefix = '';
+
+        const {origin} = window.location;
+        if(co === true && origin) {
+            prefix = origin.replace(/:\/\/www\./, '://api.');
+        }
+        if(cs === true) {
+            prefix = 'https://www.httpsecurityheaders.dev';
+        }
+
+        const img = document.createElement('img');
+        img.src = `${prefix}/.netlify/functions/header-svg`;
+
+        document.getElementById(divName).appendChild(img);
+    }
 </script>
-<a href="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg">images with redirect</a>
-<table border="1">
-    <tr><td>
-        <img height="240px" width="180px" src="/.netlify/functions/header-svg" alt="same origin cookies over img tag"/>
-    </td></tr>
-    <tr><td>
-    <img src="https://api.localtest.me:8888/.netlify/functions/header-svg"
-         alt="same site cross origin cookies over img tag "/>
-    </td></tr>
-    <tr><td>
-    <img src="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg"
-         alt="different site cross origin cookies over img tag "/>
-    </td></tr>
+<table border="1" style="width: 80%">
+    <tr>
+        <td><button onclick="showClientSideCookie()">show client side cookies</button></td>
+        <td><div id="clientCookies"></div></td>
+    </tr>
+    <tr>
+        <td><button onclick="showServerSideCookies('sameOrigin');">same origin cookies over img tag</button></td>
+        <td><div id="sameOrigin"></div></td>
+<!--        <img src="/.netlify/functions/header-svg" alt="same origin cookies over img tag"/>-->
+    </tr>
+    <tr>
+        <td><button onclick="showServerSideCookies('crossOrigin', true);">same site cross-origin cookies over img tag</button></td>
+        <td><div id="crossOrigin"></div></td>
+<!--        <td><img src="https://api.localtest.me:8888/.netlify/functions/header-svg" alt="same site cross origin cookies over img tag "/></td>-->
+    </tr>
+    <tr>
+        <td><button onclick="showServerSideCookies('crossSie', false, true);">cross site cookies over img tag</button></td>
+        <td><div id="crossSie"></div></td>
+<!--        <td><img src="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg" alt="different site cross origin cookies over img tag "/></td>-->
+    </tr>
 </table>
+<hr/>
+<a href="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg">images with redirect</a>
 </body>
 </html>
