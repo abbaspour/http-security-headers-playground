@@ -1,15 +1,39 @@
 <html lang="en">
 <head>
     <title>sec-fetch-* sample</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<iframe src="/.netlify/functions/sec-fetch" title="iFrame fetch"></iframe>
-<div id="xhr-fetch"></div>
+<table style="width: 80%; height: 50%; border-spacing: 1px">
+    <tr>
+        <td style="width: 40%">
+            <button onclick="loadXHR()">load with XHR</button>
+        </td>
+        <td>
+            <div id="xhr-fetch"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="loadIframe()">load in iFrame</button>
+        </td>
+        <td>
+            <div id="iframe-fetch"></div>
+        </td>
+    </tr>
+</table>
+
 <script>
-    const {origin} = window.location
-    fetch(`/.netlify/functions/sec-fetch`, {})
-        .then((response) => response.text())
-        .then((data) => document.getElementById('xhr-fetch').innerHTML = data);
+    function loadXHR() {
+        const {origin} = window.location
+        fetch(`/.netlify/functions/sec-fetch`, {})
+            .then((response) => response.text())
+            .then((data) => document.getElementById('xhr-fetch').innerHTML = data);
+    }
+
+    function loadIframe() {
+        document.getElementById('iframe-fetch').innerHTML = "<iframe src='/.netlify/functions/sec-fetch' title='iFrame fetch'></iframe>"
+    }
 </script>
 
 </body>
