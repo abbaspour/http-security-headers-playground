@@ -47,6 +47,9 @@
 /csp.html
   Content-Security-Policy: default-src 'self'; img-src 'self'; media-src *; script-src 'self' 'unsafe-inline'; font-src 'self' fonts.cdnfonts.com; style-src 'self' 'unsafe-inline' fonts.cdnfonts.com
 
+/upgrade-insecure.html
+  Upgrade-Insecure-Requests: 1
+
 # Referrer-Policy
 /referrer-policy/no-referrer.html
   Referrer-Policy: no-referrer
