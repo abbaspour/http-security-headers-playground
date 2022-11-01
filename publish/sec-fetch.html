@@ -23,18 +23,30 @@
             <div id="iframe-fetch"></div>
         </td>
     </tr>
+    <tr>
+        <td>
+            <button onclick="loadImg()">load <code>img</code> tag</button>
+        </td>
+        <td>
+            <div id="img-fetch"></div>
+        </td>
+    </tr>
 </table>
 
 <script>
     function loadXHR() {
-        const {origin} = window.location
-        fetch(`/.netlify/functions/sec-fetch`, {})
+        //const {origin} = window.location;
+        fetch(`/.netlify/functions/sec-fetch`, {headers: {'accept': 'text/html'}})
             .then((response) => response.text())
             .then((data) => document.getElementById('xhr-fetch').innerHTML = data);
     }
 
     function loadIframe() {
         document.getElementById('iframe-fetch').innerHTML = "<iframe src='/.netlify/functions/sec-fetch' title='iFrame fetch'></iframe>"
+    }
+
+    function loadImg() {
+        document.getElementById('img-fetch').innerHTML = `<img alt="sec-fetch-site" src="/.netlify/functions/sec-fetch"/>`;
     }
 </script>
 

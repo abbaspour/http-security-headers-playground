@@ -3,22 +3,20 @@ exports.handler = async (event, context) => {
     console.log(event.headers);
 
     const {
-        'sec-fetch-user': user = '-',
         'sec-fetch-site': site,
         'sec-fetch-mode': mode,
-        'sec-fetch-dest': dest
+        'sec-fetch-dest': dest,
+        'accept' : accept = 'text/html'
     } = event.headers;
-    const html = `
-  <html lang="en">
+
+    const body = accept.startsWith('text/html') ?
+        `<html lang="en">
     <head>
       <title>sec-fetch-* result</title>
       <meta charset="utf-8">
     </head>
     <body>
     <table>
-        <tr>
-            <td>sec-fetch-user</td><td>${user}</td>
-        </tr>
         <tr>
             <td>sec-fetch-site</td><td>${site}</td>
         </tr>
@@ -30,14 +28,25 @@ exports.handler = async (event, context) => {
         </tr>
     </table>
     </body>
-  </html>`;
+  </html>` :
+        `<svg width="600px" height="50px" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .heavy {
+        font: bold 14px monospaced;
+        }
+    </style>
+    <text x="10" y="10" class="heavy">sec-fetch-site: ${site}</text>    
+    <text x="10" y="20" class="heavy">sec-fetch-mode: ${mode}</text>    
+    <text x="10" y="30" class="heavy">sec-fetch-dest: ${dest}</text>    
+</svg>`
+    ;
 
     return {
         'statusCode': 200,
         'headers': {
             'Cache-Control': 'no-cache',
-            'Content-Type': 'text/html',
+            'Content-Type': accept.startsWith('text/html') ? 'text/html' :  'image/svg+xml',
         },
-        'body': html
+        body
     }
 }
