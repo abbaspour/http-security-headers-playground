@@ -26,7 +26,7 @@
   Access-Control-Allow-Credentials: true
 
 # Clear-Site-Data
-/logout.html
+/clear-site-data.html
   Clear-Site-Data: "cookies"
 
 # HSTS
@@ -34,15 +34,12 @@
   Strict-Transport-Security: max-age=60
 
 #  X-Content-Type-Options
-/nosniff.html
-  X-Content-Type-Options: nosniff
-
-/xcto/style.css
-  Content-Type: text/plain
+/xcto/xcto.css
+  Content-Type: text/css
   Cache-Control: private
 
-/xcto/style-nosniff.css
-  Content-Type: text/plain
+/xcto/xcto-nosniff.css
+  Content-Type: text/css
   Cache-Control: private
   X-Content-Type-Options: nosniff
 

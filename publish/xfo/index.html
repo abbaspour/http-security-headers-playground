@@ -9,12 +9,14 @@
             height: 400px;
             background: beige;
         }
+
         .overlay {
             border: 0;
             width: 400px;
             height: 400px;
             background: beige;
         }
+
         .overlay-attack {
             border: 0;
             pointer-events: none;
@@ -26,8 +28,12 @@
             top: 148px;
             left: 815px;
         }
-    </style></head>
+    </style>
+</head>
 <body>
+<a class="navigation" href="../framing.html">Back</a>
+<hr/>
+
 <script>
     function loadSameOriginIframe() {
         window.document.getElementById('unsafe-iframe').innerHTML = '<iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe>'
@@ -53,16 +59,21 @@
 <table border="1" style="width: 50%">
     <caption><code>X-Frame-Options</code> Header</caption>
     <thead>
-        <tr><td>Value</td><td>Description</td></tr>
+    <tr>
+        <td>Value</td>
+        <td>Description</td>
+    </tr>
     </thead>
     <tbody>
     <tr>
-        <td><code>DENY</code></td><td><code>deny any attempt</code></td>
+        <td><code>DENY</code></td>
+        <td><code>deny any attempt</code></td>
     </tr>
     <tr>
-        <td><code>SAMEORIGIN</code></td><td><code>allow framing in the same website</code></td>
+        <td><code>SAMEORIGIN</code></td>
+        <td><code>allow framing in the same website</code></td>
     </tr>
-</tbody>
+    </tbody>
 </table>
 <table style="width: 1200px; padding: 1px;">
     <tr style="height: 400px">
@@ -77,9 +88,15 @@
         </td>
     </tr>
     <tr style="text-align: center">
-        <td><button onclick="loadSameOriginIframe()">unsafe iframe</button></td>
-        <td><button onclick="loadOverlay()">overlay</button></td>
-        <td><button onclick="loadOverlayOverIframe()">overlay over iframe</button></td>
+        <td>
+            <button onclick="loadSameOriginIframe()">unsafe iframe</button>
+        </td>
+        <td>
+            <button onclick="loadOverlay()">overlay</button>
+        </td>
+        <td>
+            <button onclick="loadOverlayOverIframe()">overlay over iframe</button>
+        </td>
     </tr>
 </table>
 <hr/>
@@ -90,7 +107,9 @@
         </td>
     </tr>
     <tr style="text-align: center">
-        <td><button onclick="loadDenyIframe()">safe iframe</button></td>
+        <td>
+            <button onclick="loadDenyIframe()">safe iframe</button>
+        </td>
     </tr>
 </table>
 </body>

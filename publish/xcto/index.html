@@ -4,15 +4,17 @@
     <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
+<a class="navigation" href="../xss.html">Back</a>
+<hr/>
 <script>
     function loadUnsafeCss() {
         const s = document.createElement('script');
-        s.src = "/xcto/style.css";
+        s.src = "/xcto/xcto.css";
         document.body.appendChild(s);
     }
     function loadSafeCss() {
         const s = document.createElement('script');
-        s.src = "/xcto/style-nosniff.css";
+        s.src = "/xcto/xcto-nosniff.css";
         document.body.appendChild(s);
     }
 </script>
