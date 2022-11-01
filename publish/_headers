@@ -27,7 +27,7 @@
 
 # Clear-Site-Data
 /clear-site-data.html
-  Clear-Site-Data: "cookies"
+  Clear-Site-Data: "cookies", "cache"
 
 # HSTS
 /hsts.html

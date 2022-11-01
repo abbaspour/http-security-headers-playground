@@ -6,14 +6,14 @@
         .iframe {
             border: 0;
             width: 400px;
-            height: 400px;
+            height: 200px;
             background: beige;
         }
 
         .overlay {
             border: 0;
             width: 400px;
-            height: 400px;
+            height: 200px;
             background: beige;
         }
 
@@ -21,12 +21,13 @@
             border: 0;
             pointer-events: none;
             width: 400px;
-            height: 400px;
-            background: beige;
+            height: 200px;
+            /*background: beige;*/
             position: absolute;
+            fill-opacity: 100%;
             z-index: 2;
-            top: 148px;
-            left: 815px;
+            top: 222px;
+            left: 823px;
         }
     </style>
 </head>
@@ -40,14 +41,15 @@
     }
 
     function loadOverlay() {
-        window.document.getElementById('overlay').innerHTML = '<button>safe</button>';
+        window.document.getElementById('overlay').innerHTML = '<button style="margin: 6px">&nbsp;&nbsp;safe&nbsp;&nbsp;</button>';
         window.document.getElementById('overlay').classList.add('overlay');
 
     }
 
     function loadOverlayOverIframe() {
-        window.document.getElementById('overlay-attack').innerHTML = '<iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe><div class="overlay-attack"><button>safe</button></button></div>"'
-        //window.document.getElementById('overlay').classList.add('overlay');
+        window.document.getElementById('overlay-attack').innerHTML =
+            '<iframe src="sameorigin.html" title="iFrame with XFO SAMEORIGIN" class="iframe"></iframe>' +
+            '<div class="overlay-attack"><button style="margin: 6px">&nbsp;&nbsp;safe&nbsp;&nbsp;</button></button></div>';
     }
 
     function loadDenyIframe() {
@@ -66,17 +68,21 @@
     </thead>
     <tbody>
     <tr>
-        <td><code>DENY</code></td>
-        <td><code>deny any attempt</code></td>
+        <td><code>-</code></td>
+        <td>framing allowed from any origin</td>
     </tr>
     <tr>
         <td><code>SAMEORIGIN</code></td>
-        <td><code>allow framing in the same website</code></td>
+        <td>allow framing in the same origin</td>
+    </tr>
+    <tr>
+        <td><code>DENY</code></td>
+        <td>deny any attempt</td>
     </tr>
     </tbody>
 </table>
 <table style="width: 1200px; padding: 1px;">
-    <tr style="height: 400px">
+    <tr style="height: 200px">
         <td style="width: 400px">
             <div id="unsafe-iframe"></div>
         </td>
@@ -101,7 +107,7 @@
 </table>
 <hr/>
 <table style="width: 400px">
-    <tr style="height: 400px">
+    <tr style="height: 200px">
         <td>
             <div id="safe-iframe"></div>
         </td>
