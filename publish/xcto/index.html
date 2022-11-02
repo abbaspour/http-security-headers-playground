@@ -6,6 +6,26 @@
 <body>
 <a class="navigation" href="../xss.html">Back</a>
 <hr/>
+<table border="1" style="width: 50%">
+    <caption><code>X-Content-Type-Options</code> Header</caption>
+    <thead>
+    <tr>
+        <td>Value</td>
+        <td>Description</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>-</code></td>
+        <td>sniffing allowed</td>
+    </tr>
+    <tr>
+        <td><code>nosniff</code></td>
+        <td>Blocks a request if the request destination is of type style and the MIME type is not text/css, or of type script and the MIME type is not javascript</td>
+    </tr>
+    </tbody>
+</table>
+
 <script>
     function loadUnsafeCss() {
         const s = document.createElement('script');
@@ -18,12 +38,24 @@
         document.body.appendChild(s);
     }
 </script>
-<button onclick="loadUnsafeCss();">load unsafe CSS</button>
+<table>
+    <tr>
+        <td>
+            <button onclick="loadUnsafeCss();">load unsafe CSS</button>
+        </td>
+        <td>
+            JS executed from text/css: <span id='js_css' style="color: gray">??</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="loadSafeCss();">load safe CSS</button>
+        </td>
+        <td>
+            JS executed from text/css (nosniff): <span id='js_css_nosniff' style="color: gray">??</span>
+        </td>
+    </tr>
+</table>
 <br/>
-<button onclick="loadSafeCss();">load safe CSS</button>
-<hr/>
-JS executed from text/css: <span id='js_css' style="color: gray">??</span>
-<br/>
-JS executed from text/css (nosniff): <span id='js_css_nosniff' style="color: gray">??</span>
 </body>
 

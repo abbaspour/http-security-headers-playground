@@ -1,11 +1,60 @@
 <html lang="en">
 <head>
-    <title>sec-fetch-* sample</title>
+    <title>Sec-Fetch-* sample</title>
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <a class="navigation" href="framing.html">Back</a>
 <hr/>
+<table border="1" style="width: 80%">
+    <thead>
+        <tr>
+            <td>Directive</td>
+            <td>Description</td>
+            <td>Values</td>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td width="20%">
+            <code>Sec-Fetch-Mode</code>
+        </td>
+        <td>
+            allows server to distinguish between requests originating from a user navigating between HTML pages, and requests to load images and other resources.
+        </td>
+        <td>
+            <code>cors, navigate, no-cors, same-origin, websocket</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>Sec-Fetch-Dest</code></td>
+        <td>
+            indicates the request's destination
+        </td>
+        <td>
+            <code>document, embed, font, iframe, image, style, ...</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>Sec-Fetch-Site</code></td>
+        <td>
+            indicates the relationship between a request initiator's origin and the origin of the requested resource.
+        </td>
+        <td>
+            <code>cross-site, same-origin, same-site, none (i.e. user generated)</code>
+        </td>
+    </tr>
+    <tr>
+        <td><code>Sec-Fetch-User</code></td>
+        <td>
+            indicates that requests initiated by user activation,
+        </td>
+        <td>
+            <code>?1</code>
+        </td>
+    </tr>
+    </tbody>
+</table>
 <table style="width: 80%; height: 50%; border-spacing: 1px">
     <tr>
         <td style="width: 40%">
