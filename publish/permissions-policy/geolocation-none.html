@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+    <link href="/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<a class="navigation" href="index.html">Back</a>
+<hr/>
+<script>
+    const successCallback = (position) => {
+        console.log(position);
+        const {latitude, longitude} = position.coords;
+        document.getElementById("latitude").innerText = latitude;
+        document.getElementById("longitude").innerText = longitude;
+    };
+
+    const errorCallback = (error) => {
+        console.log(error);
+    };
+
+    function getLocation() {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    }
+</script>
+<button onclick="getLocation()">get location</button>
+<br>
+latitude: <div id="latitude"></div>
+<br/>
+longitude: <div id="longitude"></div>
+</body>

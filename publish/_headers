@@ -83,6 +83,12 @@
 /permissions-policy/camera-none.html
   Feature-Policy: camera 'none';
 
+/permissions-policy/geolocation.html
+  Feature-Policy: geolocation 'self';
+
+/permissions-policy/geolocation-none.html
+  Feature-Policy: geolocation 'none';
+
 # Expect-CT
 /expect-ct.html
   Expect-CT: report-uri="https://www.localtest.me:8888/.netlify/functions/report-ct"; max-age=10; enforce

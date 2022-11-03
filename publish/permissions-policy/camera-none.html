@@ -21,6 +21,8 @@
 </head>
 
 <body>
+<a class="navigation" href="index.html">Back</a>
+<hr/>
 <div id="container">
     <video autoplay="true" id="videoElement">
 
@@ -35,7 +37,7 @@
                 video.srcObject = stream;
             })
             .catch(function (err0r) {
-                console.log("Something went wrong!");
+                console.log("Something went wrong!", err0r);
             });
     }
 </script>
