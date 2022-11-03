@@ -9,6 +9,41 @@
 <a class="navigation" href="../privacy.html">Back</a>
 <hr/>
 <table border="1">
+    <thead>
+    <tr>
+        <td>Same Origin</td><td>Cross Origin</td><td>Strict to HTTPS</td><td>Policy</td>
+    </tr>
+    </thead>
+    <tr>
+        <td>Full</td><td>Full</td><td>No</td><td><code><a href="unsafe-url.html?user=abc">unsafe-url</a></code></td>
+    </tr>
+    <tr>
+        <td>Full</td><td>Full</td><td>No (same protocol)</td><td><a href="no-referrer-when-downgrade.html?user=abc"><code>no-referrer-when-downgrade</code></a></td>
+    </tr>
+    <tr>
+        <td>Full</td><td>origin only</td><td>-</td><td><a href="origin-when-cross-origin.html?user=abc"><code>origin-when-cross-origin</code></a></td>
+    </tr>
+    <tr>
+        <td>Full</td><td>No</td><td>-</td><td><a href="same-origin.html?user=abc"><code>same-origin</code></a></td>
+    </tr>
+    <tr>
+        <td>Full</td><td>Full</td><td>Yes</td><td><a href="strict-origin.html?user=abc"><code>strict-origin</code></a></td>
+    </tr>
+    <tr>
+        <td>Full</td><td>origin only</td><td>Yes</td><td><a href="strict-origin-when-cross-origin.html?user=abc"><code>strict-origin-when-cross-origin</code></a></td>
+    </tr>
+    <tr>
+        <td>origin only</td><td>origin only</td><td>-</td><td><a href="origin.html?user=abc"><code>origin</code></a></td>
+    </tr>
+    <tr>
+        <td>No</td><td>No</td><td>-</td><td><a href="no-referrer.html?user=abc"><code>no-referrer</code></a></td>
+    </tr>
+    <tbody>
+
+    </tbody>
+</table>
+<br/>
+<table border="1" style="width: 80%">
     <tr>
         <td><a href="no-referrer.html?user=abc"><code>no-referrer</code></a></td>
         <td>
