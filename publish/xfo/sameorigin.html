@@ -3,7 +3,13 @@
     <title>button inside iframe</title>
 </head>
 <body>
-<button onclick="alert('unsafe operation clicked')">unsafe</button>
+<script>
+    function logToDiv() {
+        document.getElementById('log').innerText = 'unsafe operation clicked';
+    }
+</script>
+<button onclick="logToDiv()">unsafe</button>
 <br/>
+<div id="log"></div>
 </body>
 </html>
