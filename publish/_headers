@@ -89,6 +89,9 @@
 /permissions-policy/geolocation-none.html
   Feature-Policy: geolocation 'none';
 
+/permissions-policy/document-domain-none.html
+  Feature-Policy: document-domain 'none';
+
 # Expect-CT
 /expect-ct.html
   Expect-CT: report-uri="https://www.localtest.me:8888/.netlify/functions/report-ct"; max-age=10; enforce

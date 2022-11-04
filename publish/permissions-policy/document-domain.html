@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <title>document-domain example</title>
+    <link href="../style.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="navigation" href="index.html">Back</a>
+<hr/>
+<script>
+    function setDocumentDomain() {
+        document.domain = "localtest.me";
+    }
+    function getDocumentDomain() {
+        document.getElementById("domain").innerText = document.domain;
+    }
+</script>
+<button onclick="setDocumentDomain()">set document.domain</button>
+<button onclick="getDocumentDomain()">get document.domain</button>
+<div id="domain"></div>
+</body>
+</html>
