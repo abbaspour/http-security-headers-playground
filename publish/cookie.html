@@ -11,6 +11,8 @@ Write <a href="/.netlify/functions/set-cookie">local</a> &
 <ul>
     <li><code>Secure</code></li>
     <li><code>HttpOnly</code></li>
+    <li><code>Domain</code>
+    <li><code>Path</code>
     <li><code>SameSite</code>
         <ul>
             <li><code>Strict</code></li>
@@ -41,7 +43,7 @@ Write <a href="/.netlify/functions/set-cookie">local</a> &
         document.getElementById(divName).appendChild(img);
     }
 </script>
-<table border="1" style="width: 80%">
+<table style="width: 80%; border:1px solid black;border-collapse:collapse;">
     <tr>
         <td style="width: 30%"><button onclick="showClientSideCookie()">show client side cookies</button></td>
         <td><div id="clientCookies"></div></td>
@@ -49,20 +51,18 @@ Write <a href="/.netlify/functions/set-cookie">local</a> &
     <tr>
         <td><button onclick="showServerSideCookies('sameOrigin');">same origin cookies over img tag</button></td>
         <td><div id="sameOrigin"></div></td>
-<!--        <img src="/.netlify/functions/header-svg" alt="same origin cookies over img tag"/>-->
     </tr>
     <tr>
         <td><button onclick="showServerSideCookies('crossOrigin', true);">same site cross-origin cookies over img tag</button></td>
         <td><div id="crossOrigin"></div></td>
-<!--        <td><img src="https://api.localtest.me:8888/.netlify/functions/header-svg" alt="same site cross origin cookies over img tag "/></td>-->
     </tr>
     <tr>
         <td><button onclick="showServerSideCookies('crossSie', false, true);">cross site cookies over img tag</button></td>
         <td><div id="crossSie"></div></td>
-<!--        <td><img src="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg" alt="different site cross origin cookies over img tag "/></td>-->
+    </tr>
+    <tr>
+        <td colspan="2"><a href="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg">images with redirect</a></td>
     </tr>
 </table>
-<hr/>
-<a href="https://www.httpsecurityheaders.dev/.netlify/functions/header-svg">images with redirect</a>
 </body>
 </html>

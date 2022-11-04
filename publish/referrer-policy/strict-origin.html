@@ -1,11 +1,23 @@
 <html lang="en">
 <head>
     <title>Referrer-Policy strict-origin</title>
+    <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
 <a class="navigation" href="index.html">Back</a>
 <hr/>
-<iframe src="https://httpbin.org/headers">strict-origin HTTPS headers</iframe>
-<iframe src="http://httpbin.org/headers">strict-origin HTTP headers</iframe>
+<script>
+    function loadIframeHttps() {
+        document.getElementById('iframe-https').innerHTML = '<iframe src="https://httpbin.org/headers" style="width: 90%; height: 40%">strict-origin HTTPS headers</iframe>'
+    }
+    function loadIframeHttp() {
+        document.getElementById('iframe-http').innerHTML = '<iframe src="http://httpbin.org/headers" style="width: 90%; height: 40%">strict-origin HTTPS headers</iframe>'
+    }
+</script>
+<button onclick="loadIframeHttps()">load HTTPS</button>
+<div id="iframe-https"></div>
+<br/>
+<button onclick="loadIframeHttp()">load HTTP</button>
+<div id="iframe-http"></div>
 </body>
 </html>
