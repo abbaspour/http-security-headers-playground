@@ -1,13 +1,14 @@
 <html lang="en">
 <head>
     <title>Cookie sample</title>
-    <link href="/style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<a class="navigation" href="../">Back</a>
+<a class="navigation" href="../">Back</a>&nbsp;
+<a class="navigation" href="/.netlify/functions/set-cookie">local cookie</a>&nbsp;
+<a class="navigation" href="https://www.httpsecurityheaders.dev/.netlify/functions/set-cookie" target="_blank">remote cookie</a>
 <hr/>
-Write <a href="/.netlify/functions/set-cookie">local</a> &
-<a href="https://www.httpsecurityheaders.dev/.netlify/functions/set-cookie" target="_blank">remote</a> cookies.
+Cookie flags with <code>Set-Cookie</code> header:
 <ul>
     <li><code>Secure</code></li>
     <li><code>HttpOnly</code></li>
@@ -45,7 +46,7 @@ Write <a href="/.netlify/functions/set-cookie">local</a> &
 </script>
 <table style="width: 80%; border:1px solid black;border-collapse:collapse;">
     <tr>
-        <td style="width: 30%"><button onclick="showClientSideCookie()">show client side cookies</button></td>
+        <td style="width: 30%"><button onclick="showClientSideCookie()">client side cookies</button></td>
         <td><div id="clientCookies"></div></td>
     </tr>
     <tr>

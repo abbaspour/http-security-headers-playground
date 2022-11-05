@@ -6,6 +6,49 @@
 <body>
 <a class="navigation" href="../">Back</a>
 <hr/>
+<table border="1">
+    <caption>Preflight Headers</caption>
+    <thead>
+        <tr>
+            <th>Header</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Access-Control-Allow-Credentials</code></td>
+            <td>expose response to the JavaScript when the request's credentials mode is <code>include</code></td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Allow-Headers</code></td>
+            <td>HTTP headers that can be used during the actual request</td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Allow-Methods</code></td>
+            <td>HTTP methods allowed when accessing a resource</td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Allow-Origin</code></td>
+            <td>indicates whether the response can be shared with requesting code from the given <code>origin</code></td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Expose-Headers</code></td>
+            <td>which response headers should be made available to scripts running in the browser</td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Max-Age</code></td>
+            <td>how long the results of a preflight check can be cache</td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Request-Headers</code></td>
+            <td>let the server know which HTTP headers the client might send when the actual request is made</td>
+        </tr>
+        <tr>
+            <td><code>Access-Control-Request-Method</code></td>
+            <td>let the server know which HTTP method will be used when the actual request is made</td>
+        </tr>
+    </tbody>
+</table>
 <table style="width: 80%">
     <tr style="height: 200px; alignment: top">
         <td style="height: 100%">
@@ -20,7 +63,7 @@
             Calling <a id="api-link">API</a> from allowed origin
         </td>
         <td>
-            Calling API from <a id="fake-link">fake</a> origin
+            Calling API from <a id="fake-link">disallowed</a> origin
         </td>
     </tr>
 </table>

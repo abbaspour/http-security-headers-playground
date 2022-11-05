@@ -15,7 +15,11 @@ exports.handler = async (event, context) => {
             };
         else {
             return {
-                statusCode: 400
+                statusCode: 204,
+                headers: {
+                    "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Allow-Max-Age": 0
+                }
             };
         }
     }
