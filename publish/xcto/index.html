@@ -6,7 +6,7 @@
 <body>
 <a class="navigation" href="../xss.html">Back</a>
 <hr/>
-<table border="1" style="width: 50%">
+<table style="width: 50%">
     <caption><code>X-Content-Type-Options</code> Header</caption>
     <thead>
     <tr>
@@ -38,10 +38,10 @@
         document.body.appendChild(s);
     }
 </script>
-<table>
+<table style="width: 50%">
     <tr>
-        <td>
-            <button onclick="loadUnsafeCss();">load unsafe CSS</button>
+        <td style="width: 20%">
+            <button onclick="loadUnsafeCss();" style="width: 100%">load unsafe CSS</button>
         </td>
         <td>
             JS executed from text/css: <span id='js_css' style="color: gray">??</span>
@@ -49,7 +49,7 @@
     </tr>
     <tr>
         <td>
-            <button onclick="loadSafeCss();">load safe CSS</button>
+            <button onclick="loadSafeCss();" style="width: 100%">load safe CSS</button>
         </td>
         <td>
             JS executed from text/css (nosniff): <span id='js_css_nosniff' style="color: gray">??</span>

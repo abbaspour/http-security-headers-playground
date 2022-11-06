@@ -6,7 +6,7 @@
 <body>
 <a class="navigation" href="xss.html">Back</a>
 <hr/>
-<table border="1">
+<table>
     <caption><code>Content-Security-Policy</code> Header</caption>
     <thead>
     <tr>
@@ -23,8 +23,8 @@
 </table>
 <table style="width: 80%">
     <thead>
-    <tr >
-        <td>
+    <tr>
+        <td style="width: 50%">
             <button id="self-img-btn"><code>self</code> image</button>
         </td>
         <td>
@@ -32,15 +32,12 @@
         </td>
     </tr>
     </thead>
-    <tr style="alignment: center">
+    <tr style="alignment: center; height: 175px">
         <td>
             <div id="self-img"></div>
         </td>
         <td>
             <div id="remote-img"></div>
-        </td>
-        <td>
-            <div id="inline-js"></div>
         </td>
     </tr>
 </table>

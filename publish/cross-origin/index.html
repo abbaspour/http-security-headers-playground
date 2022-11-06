@@ -6,7 +6,7 @@
 <body>
 <a class="navigation" href="../">Back</a>
 <hr/>
-<table border="1">
+<table>
     <caption>Preflight Headers</caption>
     <thead>
         <tr>
@@ -74,7 +74,7 @@
     document.getElementById('api-link').href = `${api}/.netlify/functions/aca-origin-restricted`;
     document.getElementById('fake-link').href = `${fake}/.netlify/functions/aca-origin-restricted`;
 
-    document.getElementById('www').innerHTML = `<iframe src="frame.html" style="width: 100%; height: 100%"></iframe>`;
+    document.getElementById('www').innerHTML = `<iframe src="frame.html" style="width: 100%; height: 100%" ></iframe>`;
     document.getElementById('fake').innerHTML = `<iframe src="${fake}/cross-origin/frame.html" style="width: 100%"></iframe>`;
 </script>
 </body>

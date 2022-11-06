@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/dm-sans');
+/*@import url('https://fonts.cdnfonts.com/css/dm-sans');*/
 
 body {
     background-color: mintcream;
@@ -15,9 +15,11 @@ caption {
     caption-side: bottom;
 }
 
-table {
+table, td, th {
     font-family: 'DM Sans', sans-serif;
     font-size: large;
+    border-collapse: collapse;
+    border: 1px solid;
 }
 
 thead {
@@ -35,4 +37,8 @@ code {
 
 thead th {
     background-color: lightgray;
+}
+
+iframe {
+    border: none;
 }
