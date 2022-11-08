@@ -10,14 +10,14 @@ exports.handler = async (event, context) => {
 
     for(const [i, c] of cookies.entries()) {
         console.log(i, c);
-        text += `<text x="10" y="${(i+1) * 10}" class="heavy">${c}</text>`;
+        text += `<text x="10" y="${(i+1) * 15}" class="heavy">${c}</text>`;
     }
 
     console.log(text);
     const svg = `<svg width="600px" height="50px" xmlns="http://www.w3.org/2000/svg">
     <style>
         .heavy {
-        font: bold 14px monospaced;
+        font: 14px "DM Sans";
         }
     </style>
     ${text}

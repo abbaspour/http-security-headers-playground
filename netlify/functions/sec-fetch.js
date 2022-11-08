@@ -29,15 +29,15 @@ exports.handler = async (event, context) => {
     </table>
     </body>
   </html>` :
-        `<svg width="600px" height="50px" xmlns="http://www.w3.org/2000/svg">
+        `<svg width="600px" height="60px" xmlns="http://www.w3.org/2000/svg">
     <style>
         .heavy {
-        font: bold 14px monospaced;
+        font: 14px "DM Sans";
         }
     </style>
     <text x="10" y="10" class="heavy">sec-fetch-site: ${site}</text>    
-    <text x="10" y="20" class="heavy">sec-fetch-mode: ${mode}</text>    
-    <text x="10" y="30" class="heavy">sec-fetch-dest: ${dest}</text>    
+    <text x="10" y="30" class="heavy">sec-fetch-mode: ${mode}</text>    
+    <text x="10" y="50" class="heavy">sec-fetch-dest: ${dest}</text>    
 </svg>`
     ;
 

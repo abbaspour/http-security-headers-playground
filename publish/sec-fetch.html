@@ -58,25 +58,25 @@
     </tbody>
 </table>
 <table style="width: 80%; height: 50%; border-spacing: 1px">
-    <tr style="height: 33%">
+    <tr style="height: 33%; text-align: center">
         <td style="width: 20%">
-            <button onclick="loadXHR()">load with XHR</button>
+            <button onclick="loadXHR()" style="width: 80%;">load with fetch/XHR</button>
         </td>
         <td>
             <div id="xhr-fetch"></div>
         </td>
     </tr>
-    <tr style="height: 33%">
-        <td>
-            <button onclick="loadIframe()">load in iFrame</button>
+    <tr style="height: 33%;">
+        <td style="text-align: center">
+            <button onclick="loadIframe()" style="width: 80%;">load in iFrame</button>
         </td>
         <td>
             <div id="iframe-fetch"></div>
         </td>
     </tr>
-    <tr style="height: 33%">
-        <td>
-            <button onclick="loadImg()">load <code>img</code> tag</button>
+    <tr style="height: 33%;">
+        <td style="text-align: center">
+            <button onclick="loadImg()" style="width: 80%;">load <code>img</code> tag</button>
         </td>
         <td>
             <div id="img-fetch"></div>
