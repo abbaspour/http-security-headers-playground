@@ -1,6 +1,6 @@
 exports.handler = async (event, context) => {
 
-    console.log(event);
+    //console.log(event);
     const name = event.queryStringParameters.name ?? 'cookie';
     const line = event.headers[name] ?? '';
     const cookies = line.split(';');

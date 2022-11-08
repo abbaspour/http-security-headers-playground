@@ -1,5 +1,5 @@
 exports.handler = async (event, context) => {
-    console.log(event);
+    //console.log(event);
     const {httpMethod, headers} = event;
     const {origin = '*'} = headers;
 

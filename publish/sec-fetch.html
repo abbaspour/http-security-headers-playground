@@ -9,11 +9,11 @@
 <table style="width: 80%">
     <caption><code>Sec-Fetch</code> Family Header</caption>
     <thead>
-        <tr>
-            <th>Directive</th>
-            <th>Description</th>
-            <th>Values</th>
-        </tr>
+    <tr>
+        <th>Directive</th>
+        <th>Description</th>
+        <th>Values</th>
+    </tr>
     </thead>
     <tbody>
     <tr>
@@ -21,7 +21,8 @@
             <code>Sec-Fetch-Mode</code>
         </td>
         <td>
-            allows server to distinguish between requests originating from a user navigating between HTML pages, and requests to load images and other resources.
+            allows server to distinguish between requests originating from a user navigating between HTML pages, and
+            requests to load images and other resources.
         </td>
         <td>
             <code>cors, navigate, no-cors, same-origin, websocket</code>
@@ -57,15 +58,15 @@
     </tbody>
 </table>
 <table style="width: 80%; height: 50%; border-spacing: 1px">
-    <tr>
-        <td style="width: 30%">
+    <tr style="height: 33%">
+        <td style="width: 20%">
             <button onclick="loadXHR()">load with XHR</button>
         </td>
         <td>
             <div id="xhr-fetch"></div>
         </td>
     </tr>
-    <tr>
+    <tr style="height: 33%">
         <td>
             <button onclick="loadIframe()">load in iFrame</button>
         </td>
@@ -73,7 +74,7 @@
             <div id="iframe-fetch"></div>
         </td>
     </tr>
-    <tr>
+    <tr style="height: 33%">
         <td>
             <button onclick="loadImg()">load <code>img</code> tag</button>
         </td>

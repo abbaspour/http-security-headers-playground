@@ -47,8 +47,11 @@
 /csp.html
   Content-Security-Policy: default-src 'none'; img-src 'self'; media-src *; script-src 'self'; font-src 'self' fonts.cdnfonts.com; style-src 'self' 'unsafe-inline' fonts.cdnfonts.com
 
-/upgrade-insecure.html
-  Upgrade-Insecure-Requests: 1
+/csp-report.html
+  Content-Security-Policy-Report-Only: default-src 'none'; img-src 'self'; media-src *; script-src 'self'; font-src 'self' fonts.cdnfonts.com; style-src 'self' 'unsafe-inline' fonts.cdnfonts.com; report-uri https://www.localtest.me:8888/.netlify/functions/reporter
+
+#/upgrade-insecure.html
+#  Upgrade-Insecure-Requests: 1
 
 # Referrer-Policy
 /referrer-policy/no-referrer.html
@@ -56,7 +59,6 @@
 
 /referrer-policy/no-referrer-when-downgrade.html
   Referrer-Policy: no-referrer-when-downgrade
-  Upgrade-Insecure-Requests: 0
 
 /referrer-policy/origin.html
   Referrer-Policy: origin

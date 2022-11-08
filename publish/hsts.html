@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <title>HSTS sample</title>
-    <link href="/style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <a class="navigation" href="mitm.html">Back</a>&nbsp;<a class="navigation" href="https://www.localtest.me:8888/mitm.html">Local</a>
@@ -10,8 +10,8 @@ Setting <code>Strict-Transport-Security:max-age=60</code>
 <ul>
     <li><code>max-age=seconds</code></li>
     <li><code>includeSubDomains</code></li>
-    <li>TOFU workaround: <a href="https://hstspreload.org/"><code>preload</code></a></li>
+    <li><a href="https://hstspreload.org/"><code>preload</code></a> (TOFU)</li>
 </ul>
-HTTP access should result in fake 307 <code>Non-Authoritative-Reason: HSTS</code> done by browser HTTPS address.
+<!--HTTP access should result in fake 307 <code>Non-Authoritative-Reason: HSTS</code> done by browser HTTPS address.-->
 </body>
 </html>

@@ -3,11 +3,11 @@
     <title>ACA frame sample</title>
 </head>
 <body>
-<table style="width: 100%; height: 100%" >
+<table style="width: 100%; height: 100%">
     <tr>
         <td style="width: 20%">
-            <button id="call-co-unsafe-api"
-                    onclick="callAPI('.netlify/functions/aca-origin-unrestricted', 'unsafe-result')">unsafe api
+            <button id="call-co-unsafe-api" style="width: 100%"
+                    onclick="callAPI('.netlify/functions/aca-origin-unrestricted', 'unsafe-result')">open api
             </button>
         </td>
         <td>
@@ -16,8 +16,8 @@
     </tr>
     <tr>
         <td>
-            <button id="call-co-safe-api" onclick="callAPI('.netlify/functions/aca-origin-restricted', 'safe-result')">
-                safe api
+            <button id="call-co-safe-api" style="width: 100%"
+                    onclick="callAPI('.netlify/functions/aca-origin-restricted', 'safe-result')">protected api
             </button>
         </td>
         <td>
