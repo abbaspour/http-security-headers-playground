@@ -42,3 +42,8 @@ thead th {
 iframe {
     border: none;
 }
+
+header {
+    text-align: right;
+    font-size: x-small;
+}
