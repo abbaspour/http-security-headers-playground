@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
       <link href="/style.css" rel="stylesheet"/>
     </head>
     <body>
-    cookie returned. click <a href="/cookie.html">here</a> to return to website. 
+    cookie returned. click <a href="/">here</a> to return to website. 
     </body>
   </html>`
 
