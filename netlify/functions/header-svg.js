@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
     }
 
     console.log(text);
-    const svg = `<svg width="200px" height="${(max+1) * 15}" xmlns="http://www.w3.org/2000/svg">
+    const svg = `<svg width="600px" height="${(max+1) * 15}" xmlns="http://www.w3.org/2000/svg">
     <style>
         .heavy {
         font: 14px "DM Sans";
